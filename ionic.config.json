@@ -1,5 +1,7 @@
 {
   "name": "fingerPrint",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
