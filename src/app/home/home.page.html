@@ -10,6 +10,8 @@
   <div class="ion-padding">
     Clique no botão abaixo para verificar se sua digital está cadastrada nesse dispositivo:
     <br><br>
-    <ion-button size="large" strong expand="block" (click)="teste()">Verificar Fingerprint</ion-button>  
+    {{ msg }}
+    <ion-button class="btn" size="large" strong expand="block" (click)="submit()">Verificar Fingerprint</ion-button>  
+    <ion-button size="large" strong expand="block" (click)="resetMsg()">Reset</ion-button>  
   </div>
 </ion-content>

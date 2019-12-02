@@ -7,16 +7,21 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  msg: String
 
-  constructor(private faio: FingerprintAIO) {}
+  constructor(private faio: FingerprintAIO) {
+    this.msg = "Aguardando"
+  }
 
-  teste = () => {
-    console.log("Starting...")
+  submit = () => {
     this.faio.show({
-      clientId: 'Fingerprint-Demo', //Android: Used for encryption. iOS: used for dialogue if no `localizedReason` is given.
-      clientSecret: 'fingerprinsecret', //Necessary for Android encrpytion of keys. Use random secret key.
-  })
-  .then((result: any) => console.log(result))
-  .catch((error: any) => console.log(error));
+      description: 'oh yes'
+    })
+    .then((result: any) => this.msg = "Autenticação completa!")
+    .catch((error: any) => this.msg = "Autenticação falhou")
+  }
+
+  resetMsg = () => {
+    this.msg = "Aguardando"
   }
 }
